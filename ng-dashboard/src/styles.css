@@ -1,1 +1,130 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Roboto";
+
+  src: local("Roboto"), local("Roboto-Regular"),
+  url("assets/fonts/roboto-v20-cyrillic_latin-regular.woff2") format("woff2"),
+  url("assets/fonts/roboto-v20-cyrillic_latin-regular.woff") format("woff"),
+  url("assets/fonts/roboto-v20-cyrillic_latin-regular.ttf") format("truetype");
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  min-width: 900px;
+  min-height: 100vh;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+
+  font-weight: 400;
+  font-size: 12px;
+  font-family: "Roboto", "Arial", sans-serif;
+  color: #343434;
+
+  background-color: #f4f5f6;
+}
+
+header {
+  height: 50px;
+  background-color: #679FD2;
+}
+
+nav {
+  height: 100%;
+}
+
+.main-navigation {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.main-navigation-link {
+  margin-right: 44px;
+
+  font-weight: 400;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+li.active a {
+  color: white;
+  font-weight: bold;
+  cursor: default;
+}
+
+.login-wrapper {
+  width: 400px;
+
+  margin: 5% auto;
+  padding: 40px 50px;
+
+  background-color: white;
+  box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.4), 7px 0 15px -5px rgba(0, 0, 0, 0.2), -4px 0 15px -5px rgba(0, 0, 0, 0.2);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.login-form div:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.input-field {
+  width: 100%;
+  height: 45px;
+
+  padding-left: 3px;
+
+  color: lightgray;
+  font-size: 18px;
+
+  border: 2px solid #f4f5f6;
+  border-radius: 5px;
+}
+
+.input-field:focus {
+  border-color: #679FD2;
+  outline: none;
+}
+
+.input-field::-webkit-input-placeholder {
+  color: lightgray;
+  opacity:1;
+}
+
+.login-button {
+  width: 100%;
+  height: 45px;
+  color: #f4f5f6;
+  font-size: 18px;
+  background-color: #679FD2;
+  border-radius: 5px;
+  border: none;
+}
