@@ -1,0 +1,180 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "date": "20-06-20",
+      "country": "Россия",
+      "city": "Москва",
+      "transactions": 4,
+      "amount": 3000
+    },
+    {
+      "id": 1,
+      "date": "21-06-20",
+      "country": "Россия",
+      "city": "Москва",
+      "transactions": 3,
+      "amount": 1500
+    },
+    {
+      "id": 1,
+      "date": "22-06-20",
+      "country": "Россия",
+      "city": "Санкт-Петербург",
+      "transactions": 2,
+      "amount": 5700
+    },
+    {
+      "id": 1,
+      "date": "23-06-20",
+      "country": "Россия",
+      "city": "Пермь",
+      "transactions": 1,
+      "amount": 300
+    },
+    {
+      "id": 1,
+      "date": "24-06-20",
+      "country": "Россия",
+      "city": "Москва",
+      "transactions": 7,
+      "amount": 3800
+    },
+    {
+      "id": 2,
+      "date": "20-06-20",
+      "country": "Германия",
+      "city": "Берлин",
+      "transactions": 1,
+      "amount": 800
+    },
+    {
+      "id": 2,
+      "date": "20-06-20",
+      "country": "Германия",
+      "city": "Кельн",
+      "transactions": 8,
+      "amount": 8100
+    },
+    {
+      "id": 2,
+      "date": "20-06-20",
+      "country": "Германия",
+      "city": "Берлин",
+      "transactions": 5,
+      "amount": 3600
+    },
+    {
+      "id": 3,
+      "date": "20-06-20",
+      "country": "Франция",
+      "city": "Париж",
+      "transactions": 17,
+      "amount": 13600
+    },
+    {
+      "id": 3,
+      "date": "20-06-20",
+      "country": "Франция",
+      "city": "Лион",
+      "transactions": 4,
+      "amount": 1600
+    },
+    {
+      "id": 3,
+      "date": "20-06-20",
+      "country": "Франция",
+      "city": "Лион",
+      "transactions": 4,
+      "amount": 1600
+    },
+    {
+      "id": 4,
+      "date": "20-06-20",
+      "country": "Испания",
+      "city": "Мадрид",
+      "transactions": 2,
+      "amount": 300
+    },
+    {
+      "id": 4,
+      "date": "20-06-20",
+      "country": "Испания",
+      "city": "Барселона",
+      "transactions": 1,
+      "amount": 200
+    },
+    {
+      "id": 4,
+      "date": "20-06-20",
+      "country": "Испания",
+      "city": "Севилья",
+      "transactions": 1,
+      "amount": 700
+    },
+    {
+      "id": 5,
+      "date": "20-06-20",
+      "country": "Италия",
+      "city": "Милан",
+      "transactions": 1,
+      "amount": 900
+    },
+    {
+      "id": 5,
+      "date": "20-06-20",
+      "country": "Италия",
+      "city": "Венеция",
+      "transactions": 8,
+      "amount": 4300
+    },
+    {
+      "id": 5,
+      "date": "20-06-20",
+      "country": "Италия",
+      "city": "Рим",
+      "transactions": 2,
+      "amount": 2600
+    },
+    {
+      "id": 6,
+      "date": "20-06-20",
+      "country": "Греция",
+      "city": "Афины",
+      "transactions": 1,
+      "amount": 330
+    },
+    {
+      "id": 6,
+      "date": "20-06-20",
+      "country": "Греция",
+      "city": "Салоники",
+      "transactions": 1,
+      "amount": 590
+    },
+    {
+      "id": 6,
+      "date": "20-06-20",
+      "country": "Греция",
+      "city": "Салоники",
+      "transactions": 3,
+      "amount": 1200
+    },
+    {
+      "id": 7,
+      "date": "20-06-20",
+      "country": "Польша",
+      "city": "Варшава",
+      "transactions": 8,
+      "amount": 9200
+    },
+    {
+      "id": 7,
+      "date": "20-06-20",
+      "country": "Польша",
+      "city": "Варшава",
+      "transactions": 15,
+      "amount": 17600
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MenuItem} from "../interfaces";
+import {ApiService} from "../services/api.service";
 
 @Component({
   selector: 'dsb-dashboard',
@@ -9,9 +10,10 @@ import {MenuItem} from "../interfaces";
 export class DashboardComponent implements OnInit {
   public menuItems: MenuItem[] = [{name: 'Выйти', route: '/login'}];
 
-  constructor() { }
+  constructor(private api: ApiService) { }
 
   ngOnInit(): void {
+    this.api.getUsers();
   }
 
 }
