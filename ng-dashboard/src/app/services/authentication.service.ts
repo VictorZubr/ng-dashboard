@@ -63,7 +63,7 @@ export class AuthenticationService {
         this.error$.next('Неверный пароль');
         break;
       case 'EMAIL_NOT_FOUND':
-        this.error$.next('Такого email нет');
+        this.error$.next('Такой email не найден');
         break;
     }
 

@@ -1,45 +1,10 @@
 {
   "users": [
-    {
-      "id": 1,
-      "date": "20-06-20",
-      "country": "Россия",
-      "city": "Москва",
-      "transactions": 4,
-      "amount": 3000
-    },
-    {
-      "id": 1,
-      "date": "21-06-20",
-      "country": "Россия",
-      "city": "Москва",
-      "transactions": 3,
-      "amount": 1500
-    },
-    {
-      "id": 1,
-      "date": "22-06-20",
-      "country": "Россия",
-      "city": "Санкт-Петербург",
-      "transactions": 2,
-      "amount": 5700
-    },
-    {
-      "id": 1,
-      "date": "23-06-20",
-      "country": "Россия",
-      "city": "Пермь",
-      "transactions": 1,
-      "amount": 300
-    },
-    {
-      "id": 1,
-      "date": "24-06-20",
-      "country": "Россия",
-      "city": "Москва",
-      "transactions": 7,
-      "amount": 3800
-    },
+    { "id": 1, "date": "20-06-20", "country": "Россия", "city": "Москва", "transactions": 4, "amount": 3000},
+    { "id": 1, "date": "21-06-20", "country": "Россия", "city": "Москва", "transactions": 3, "amount": 1500},
+    { "id": 1, "date": "22-06-20", "country": "Россия", "city": "Санкт-Петербург", "transactions": 2, "amount": 5700},
+    { "id": 1, "date": "23-06-20", "country": "Россия", "city": "Пермь", "transactions": 1, "amount": 300},
+    { "id": 1, "date": "24-06-20", "country": "Россия", "city": "Москва", "transactions": 7,"amount": 3800 },
     {
       "id": 2,
       "date": "20-06-20",

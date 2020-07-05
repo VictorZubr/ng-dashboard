@@ -1,2 +1,27 @@
 <dsb-header [menuItems]="menuItems"></dsb-header>
-<p>dashboard works!</p>
+<div class="dashboard-wrapper">
+  <div class="chart">
+    <dsb-bar-chart
+      *ngIf="barChartData&&barChartLabels"
+      [barChartData]="barChartData"
+      [barChartLabels]="barChartLabels"
+    ></dsb-bar-chart>
+  </div>
+  <div class="control">
+
+    <dsb-select
+      [label]="'Категория'"
+      [options]="categories"
+      [selectedOption]="currentCategory"
+      (onSelect)="onCategorySelect($event)"
+    ></dsb-select>
+
+    <dsb-select
+      [label]="'Значение'"
+      [options]="values"
+      [selectedOption]="currentValue"
+      (onSelect)="onValueSelect($event)"
+    ></dsb-select>
+
+  </div>
+</div>

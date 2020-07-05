@@ -45,6 +45,7 @@ nav {
   height: 100%;
 }
 
+
 .main-navigation {
   height: 100%;
   display: flex;
@@ -145,4 +146,33 @@ li.active a {
   padding: 10px;
   background: #dc3545;
   color: #ffffff;
+}
+
+.dashboard-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.chart {
+  width: 80%;
+}
+
+.control {
+  width: 20%;
+  padding: 30px;
+}
+
+.select-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.select-wrapper label {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.select-wrapper select {
+  font-size: 15px;
 }

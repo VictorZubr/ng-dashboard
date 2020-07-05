@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {MenuItem} from "../interfaces";
 
 @Component({
@@ -6,12 +6,9 @@ import {MenuItem} from "../interfaces";
   templateUrl: './header.component.html',
   styles: []
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   @Input() menuItems: MenuItem[] = [];
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
