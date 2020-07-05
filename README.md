@@ -1,6 +1,6 @@
-#NgDashboard
+# NgDashboard
 
-##Installation
+## Installation
 
 Run `npm install`
 
