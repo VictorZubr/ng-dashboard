@@ -1,4 +1,4 @@
-import { GroupingOption } from '../interfaces';
+import { GroupingOption } from './interfaces';
 
 export const CATEGORIES: GroupingOption[] = [
   { id: 1, key: 'country', name: 'Страна' },

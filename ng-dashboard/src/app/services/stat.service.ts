@@ -3,7 +3,7 @@ import { map } from 'rxjs/operators';
 
 import { ApiService } from './api.service';
 import { ChartModel } from '../model/chart-model';
-import { CATEGORIES, VALUES } from '../model/const';
+import { CATEGORIES, VALUES } from '../const';
 
 @Injectable({
   providedIn: 'root'

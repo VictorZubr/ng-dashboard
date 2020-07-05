@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { MenuItem } from '../interfaces';
+import { MenuItem } from '../../interfaces';
 
 @Component({
   selector: 'app-header',

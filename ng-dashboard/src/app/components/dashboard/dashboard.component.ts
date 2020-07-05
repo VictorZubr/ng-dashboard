@@ -3,9 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { Label } from 'ng2-charts';
 import { ChartDataSets } from 'chart.js';
 
-import { GroupingOption, MenuItem } from '../interfaces';
-import { StatService } from '../services/stat.service';
-import { ChartModel } from '../model/chart-model';
+import { GroupingOption, MenuItem } from '../../interfaces';
+import { StatService } from '../../services/stat.service';
+import { ChartModel } from '../../model/chart-model';
 
 @Component({
   selector: 'app-dashboard',
