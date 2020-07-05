@@ -3,7 +3,7 @@
   <form class="login-form" [formGroup]="form" (ngSubmit)="submit()">
 
     <div>
-      <input formControlName="email" class="input-field" type="text" placeholder="Email" name="email" required="">
+      <input #email formControlName="email" class="input-field" type="text" placeholder="Email" name="email" required="">
       <div
         *ngIf="form.get('email').touched && form.get('email').invalid"
         class="validation"

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -10,9 +10,11 @@ import { AuthenticationService } from '../../services/authentication.service';
   templateUrl: './login.component.html',
   styles: []
 })
-export class LoginComponent implements OnInit {
-  form: FormGroup;
-  submitted = false;
+export class LoginComponent implements OnInit, AfterViewInit {
+  @ViewChild('email') emailElement: ElementRef;
+
+  public form: FormGroup;
+  public submitted = false;
 
   constructor(
     public auth: AuthenticationService,
@@ -26,6 +28,10 @@ export class LoginComponent implements OnInit {
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, [Validators.required, Validators.minLength(6)])
     });
+  }
+
+  ngAfterViewInit(): void {
+    this.emailElement.nativeElement.focus();
   }
 
   submit() {
