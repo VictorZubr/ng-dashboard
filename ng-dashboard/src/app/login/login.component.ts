@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {User} from "../interfaces";
-import {AuthenticationService} from "../services/authentication.service";
-import {Router} from "@angular/router";
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { User } from '../interfaces';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
-  selector: 'dsb-login',
+  selector: 'app-login',
   templateUrl: './login.component.html',
   styles: []
 })
@@ -24,7 +25,7 @@ export class LoginComponent implements OnInit {
     this.form = new FormGroup({
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, [Validators.required, Validators.minLength(6)])
-    })
+    });
   }
 
   submit() {
@@ -45,6 +46,6 @@ export class LoginComponent implements OnInit {
       this.submitted = false;
     }, () => {
       this.submitted = false;
-    })
+    });
   }
 }

@@ -1,7 +1,7 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'dsb-select',
+  selector: 'app-select',
   templateUrl: './select.component.html',
   styles: []
 })
@@ -9,12 +9,12 @@ export class SelectComponent {
   @Input() label = '';
   @Input() options = [];
   @Input() selectedOption;
-  @Output() onSelect = new EventEmitter<number>();
+  @Output() selectCheck = new EventEmitter<number>();
 
   constructor() { }
 
   CheckValue($event: number) {
-    this.onSelect.emit($event);
+    this.selectCheck.emit($event);
   }
 
 }

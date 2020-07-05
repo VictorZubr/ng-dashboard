@@ -1,8 +1,9 @@
-import {Component, Input} from '@angular/core';
-import {MenuItem} from "../interfaces";
+import { Component, Input } from '@angular/core';
+
+import { MenuItem } from '../interfaces';
 
 @Component({
-  selector: 'dsb-header',
+  selector: 'app-header',
   templateUrl: './header.component.html',
   styles: []
 })

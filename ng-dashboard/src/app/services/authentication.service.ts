@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import {FbAuthResponse, User} from "../interfaces";
-import {Observable, Subject, throwError} from "rxjs";
-import {ApiService} from "./api.service";
-import {catchError, tap} from "rxjs/operators";
-import {HttpErrorResponse} from "@angular/common/http";
+import { HttpErrorResponse } from '@angular/common/http';
+import { Observable, Subject, throwError } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
+
+import { FbAuthResponse, User } from '../interfaces';
+import { ApiService } from './api.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,33 +13,6 @@ export class AuthenticationService {
   public error$: Subject<string> = new Subject<string>();
 
   constructor(private api: ApiService) {
-  }
-
-  get token(): string {
-    const expDate = new Date(localStorage.getItem('fb-token-exp'));
-    if (new Date() > expDate) {
-      this.logout();
-      return null
-    }
-
-    return localStorage.getItem('fb-token');
-  }
-
-  login(user: User): Observable<any> {
-    user.returnSecureToken = true;
-    return this.api.login(user)
-      .pipe(
-        tap(AuthenticationService.setToken),
-        catchError(this.handleError.bind(this))
-      )
-  }
-
-  logout() {
-    AuthenticationService.setToken(null);
-  }
-
-  isAuthenticated(): boolean {
-    return !!this.token
   }
 
   private static setToken(response: FbAuthResponse | null) {
@@ -50,6 +24,33 @@ export class AuthenticationService {
     const expDate = new Date(new Date().getTime() + +response.expiresIn * 1000);
     localStorage.setItem('fb-token', response.idToken);
     localStorage.setItem('fb-token-exp', expDate.toString());
+  }
+
+  get token(): string {
+    const expDate = new Date(localStorage.getItem('fb-token-exp'));
+    if (new Date() > expDate) {
+      this.logout();
+      return null;
+    }
+
+    return localStorage.getItem('fb-token');
+  }
+
+  login(user: User): Observable<any> {
+    user.returnSecureToken = true;
+    return this.api.login(user)
+      .pipe(
+        tap(AuthenticationService.setToken),
+        catchError(this.handleError.bind(this))
+      );
+  }
+
+  logout() {
+    AuthenticationService.setToken(null);
+  }
+
+  isAuthenticated(): boolean {
+    return !!this.token;
   }
 
   private handleError(error: HttpErrorResponse) {
@@ -67,6 +68,6 @@ export class AuthenticationService {
         break;
     }
 
-    return throwError(error)
+    return throwError(error);
   }
 }

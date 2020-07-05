@@ -1,5 +1,5 @@
-import {Label} from "ng2-charts";
-import {ChartDataSets} from "chart.js";
+import { Label } from 'ng2-charts';
+import { ChartDataSets } from 'chart.js';
 
 export interface Environment {
   apiKey: string;

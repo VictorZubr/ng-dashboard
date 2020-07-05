@@ -1,7 +1,7 @@
-import {Environment} from "../app/interfaces";
+import {Environment} from '../app/interfaces';
 
 export const environment: Environment = {
   production: true,
   apiKey: 'AIzaSyAEaO5PnNVtXJmAKYGozhDtOHPCfzR51EE',
-  fbDbUrl: 'https://angular-blog-e513b.firebaseio.com'
+  fbDbUrl: 'https://ng-dashboard-95b60.firebaseio.com/'
 };

@@ -1,27 +1,27 @@
-<dsb-header [menuItems]="menuItems"></dsb-header>
+<app-header [menuItems]="menuItems"></app-header>
 <div class="dashboard-wrapper">
   <div class="chart">
-    <dsb-bar-chart
+    <app-bar-chart
       *ngIf="barChartData&&barChartLabels"
       [barChartData]="barChartData"
       [barChartLabels]="barChartLabels"
-    ></dsb-bar-chart>
+    ></app-bar-chart>
   </div>
   <div class="control">
 
-    <dsb-select
+    <app-select
       [label]="'Категория'"
       [options]="categories"
       [selectedOption]="currentCategory"
-      (onSelect)="onCategorySelect($event)"
-    ></dsb-select>
+      (selectCheck)="onCategorySelect($event)"
+    ></app-select>
 
-    <dsb-select
+    <app-select
       [label]="'Значение'"
       [options]="values"
       [selectedOption]="currentValue"
-      (onSelect)="onValueSelect($event)"
-    ></dsb-select>
+      (selectCheck)="onValueSelect($event)"
+    ></app-select>
 
   </div>
 </div>

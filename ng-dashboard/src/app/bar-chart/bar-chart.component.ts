@@ -1,10 +1,11 @@
-import {Component, Input} from '@angular/core';
-import {Label} from "ng2-charts";
-import {ChartDataSets, ChartOptions, ChartType} from "chart.js";
+import { Component, Input } from '@angular/core';
+
+import { Label } from 'ng2-charts';
+import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 
 @Component({
-  selector: 'dsb-bar-chart',
+  selector: 'app-bar-chart',
   templateUrl: './bar-chart.component.html',
   styles: []
 })

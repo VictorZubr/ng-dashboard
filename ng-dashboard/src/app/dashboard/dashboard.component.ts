@@ -1,12 +1,14 @@
-import {Component, OnInit} from '@angular/core';
-import {GroupingOption, MenuItem} from "../interfaces";
-import {StatService} from "../services/stat.service";
-import {ChartModel} from "../model/chart-model";
-import {Label} from "ng2-charts";
-import {ChartDataSets} from "chart.js";
+import { Component, OnInit } from '@angular/core';
+
+import { Label } from 'ng2-charts';
+import { ChartDataSets } from 'chart.js';
+
+import { GroupingOption, MenuItem } from '../interfaces';
+import { StatService } from '../services/stat.service';
+import { ChartModel } from '../model/chart-model';
 
 @Component({
-  selector: 'dsb-dashboard',
+  selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styles: []
 })
@@ -17,10 +19,10 @@ export class DashboardComponent implements OnInit {
   public values: GroupingOption[];
   public barChartLabels: Label[] | null = null;
   public barChartData: ChartDataSets[] | null = null;
+  public currentCategory;
+  public currentValue;
 
   private chartModel: ChartModel;
-  private currentCategory;
-  private currentValue;
 
   constructor(private stat: StatService) { }
 
@@ -32,7 +34,7 @@ export class DashboardComponent implements OnInit {
       this.currentCategory = this.categories[0];
       this.currentValue = this.values[0];
 
-      this.renderChart()
+      this.renderChart();
     });
   }
 
@@ -47,7 +49,7 @@ export class DashboardComponent implements OnInit {
   }
 
   renderChart() {
-    const {labels, barChartData} = this.chartModel.getChartData(this.currentCategory, this.currentValue);
+    const { labels, barChartData } = this.chartModel.getChartData(this.currentCategory, this.currentValue);
     this.barChartLabels = labels;
     this.barChartData = barChartData;
   }
