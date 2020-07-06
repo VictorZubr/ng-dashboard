@@ -1,4 +1,22 @@
-import { GroupingOption, StatData, UserData } from '../interfaces';
+import {GroupingOption, StatData, UserData} from '../interfaces';
+
+const addDataToAccumulator = (
+  { labels, barChartData}: StatData,
+  category: string,
+  value: number
+): StatData => {
+  const [{ data: chartData }] = barChartData;
+  const index: number = labels.indexOf(category);
+
+  if (index < 0) {
+    labels.push(category);
+    chartData.push(value);
+  } else {
+    chartData[index] = chartData[index] as number + value;
+  }
+
+  return {labels, barChartData};
+};
 
 export class ChartModel {
   private data: UserData[];
@@ -17,18 +35,8 @@ export class ChartModel {
     return this.data.reduce((acc: StatData, record: UserData) => {
       const categoryInRecord = record[category.key];
       const valueInRecord = record[value.key];
-      const { labels } = acc;
-      const [{ data: chartData }] = acc.barChartData;
-      const index = acc.labels.indexOf(categoryInRecord);
 
-      if (index < 0) {
-        labels.push(categoryInRecord);
-        chartData.push(valueInRecord);
-      } else {
-        chartData[index] = chartData[index] + valueInRecord;
-      }
-
-      return acc;
+      return addDataToAccumulator(acc, categoryInRecord, valueInRecord);
     }, accumulator);
   }
 }
