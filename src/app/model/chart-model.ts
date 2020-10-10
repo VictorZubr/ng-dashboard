@@ -1,7 +1,7 @@
 import {GroupingOption, StatData, UserData} from '../interfaces';
 
 const addDataToAccumulator = (
-  { labels, barChartData}: StatData,
+  { labels, barChartData }: StatData,
   category: string,
   value: number
 ): StatData => {
@@ -15,7 +15,7 @@ const addDataToAccumulator = (
     chartData[index] = chartData[index] as number + value;
   }
 
-  return {labels, barChartData};
+  return { labels, barChartData };
 };
 
 export class ChartModel {

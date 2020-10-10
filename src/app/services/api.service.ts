@@ -21,4 +21,5 @@ export class ApiService {
   getUsersData() {
     return this.http.get(`${environment.fbDbUrl}/users.json`);
   }
+
 }
