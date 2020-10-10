@@ -1,0 +1,17 @@
+<main class="main-table">
+  <h2>Данные о транзакциях пользователей</h2>
+  <table frame="border" rules="all">
+    <thead>
+      <tr>
+        <th class="cell" *ngFor="let col of cols">
+          {{col}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of tableData">
+        <td class="cell" *ngFor="let col of getRow(row)">{{col}}</td>
+      </tr>
+    </tbody>
+  </table>
+</main>

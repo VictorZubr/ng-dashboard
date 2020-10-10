@@ -10,6 +10,8 @@ export interface Environment {
 export interface MenuItem {
   name: string;
   route: string;
+  notLoggedName?: string;
+  authGuard?: boolean;
 }
 
 export interface User {

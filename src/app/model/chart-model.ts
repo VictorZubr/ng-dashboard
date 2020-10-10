@@ -19,7 +19,7 @@ const addDataToAccumulator = (
 };
 
 export class ChartModel {
-  private data: UserData[];
+  private readonly data: UserData[];
   public categories: GroupingOption[];
   public values: GroupingOption[];
 
@@ -38,5 +38,9 @@ export class ChartModel {
 
       return addDataToAccumulator(acc, categoryInRecord, valueInRecord);
     }, accumulator);
+  }
+
+  getTableData(): UserData[] {
+    return this.data;
   }
 }

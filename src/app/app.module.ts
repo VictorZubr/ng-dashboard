@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 import { ChartsModule } from 'ng2-charts';
 import { SelectComponent } from './components/select/select.component';
+import { DataTableComponent } from './components/data-table/data-table.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SelectComponent } from './components/select/select.component';
     DashboardComponent,
     HeaderComponent,
     BarChartComponent,
-    SelectComponent
+    SelectComponent,
+    DataTableComponent
   ],
   imports: [
     BrowserModule,

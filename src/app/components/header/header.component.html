@@ -2,7 +2,11 @@
   <nav>
     <ul class="main-navigation">
       <li *ngFor="let item of menuItems" class="main-navigation-item" routerLinkActive="active">
-        <a routerLink="{{item.route}}" class="main-navigation-link">{{item.name}}</a>
+        <ng-container *ngIf="!item.authGuard || auth.isAuthenticated()">
+          <a routerLink="{{item.route}}"
+             class="main-navigation-link">{{auth.isAuthenticated() ? item.name : item.notLoggedName}}
+          </a>
+        </ng-container>
       </li>
     </ul>
   </nav>

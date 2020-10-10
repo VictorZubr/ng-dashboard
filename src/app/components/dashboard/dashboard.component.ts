@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Label } from 'ng2-charts';
 import { ChartDataSets } from 'chart.js';
 
-import { GroupingOption, MenuItem } from '../../interfaces';
+import { GroupingOption } from '../../interfaces';
 import { StatService } from '../../services/stat.service';
 import { ChartModel } from '../../model/chart-model';
 
@@ -14,7 +14,6 @@ import { ChartModel } from '../../model/chart-model';
 })
 export class DashboardComponent implements OnInit {
 
-  public menuItems: MenuItem[] = [{name: 'Выйти', route: '/login'}];
   public categories: GroupingOption[];
   public values: GroupingOption[];
   public barChartLabels: Label[] | null = null;
@@ -27,15 +26,24 @@ export class DashboardComponent implements OnInit {
   constructor(private stat: StatService) { }
 
   ngOnInit(): void {
-    this.stat.getUsersData().subscribe(chartModel => {
-      this.chartModel = chartModel;
-      this.categories = chartModel.categories;
-      this.values = chartModel.values;
-      this.currentCategory = this.categories[0];
-      this.currentValue = this.values[0];
+    if (this.stat.isReady()) {
+      this.initComponent(this.stat.chartModel);
+      return;
+    }
 
-      this.renderChart();
+    this.stat.getUsersData().subscribe(chartModel => {
+      this.initComponent(chartModel);
     });
+  }
+
+  private initComponent(chartModel: ChartModel) {
+    this.chartModel = chartModel;
+    this.categories = chartModel.categories;
+    this.values = chartModel.values;
+    this.currentCategory = this.categories[0];
+    this.currentValue = this.values[0];
+
+    this.renderChart();
   }
 
   onCategorySelect($event: any) {

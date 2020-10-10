@@ -176,3 +176,27 @@ li.active a {
 .select-wrapper select {
   font-size: 15px;
 }
+
+.cell {
+  font-size: 15px;
+  padding: 3px 20px;
+  text-align: start;
+}
+
+.main-table {
+  width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.main-table h2 {
+  text-align: center;
+}
+
+.main-table table {
+  width: 100%;
+}
+
+.main-table th {
+  padding: 10px 20px;
+}
