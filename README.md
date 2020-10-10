@@ -2,6 +2,8 @@
 
 ## Description
 
+[ng-dashboard](https://ng-dashboard-95b60.web.app)
+
 Very simple application. Realizes the following functionality:
 
 1. Authorization with Firebase service.
