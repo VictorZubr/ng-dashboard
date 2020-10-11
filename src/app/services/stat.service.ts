@@ -11,6 +11,7 @@ import { GroupingOption, StatData, UserData } from '../interfaces';
   providedIn: 'root'
 })
 export class StatService {
+
   private chartModel: ChartModel;
 
   constructor(private api: ApiService) { }

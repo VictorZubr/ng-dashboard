@@ -10,6 +10,7 @@ import * as pluginDataLabels from 'chartjs-plugin-datalabels';
   styles: []
 })
 export class BarChartComponent {
+
   @Input() barChartLabels: Label[] = [];
   @Input() barChartData: ChartDataSets[] = [];
 
@@ -18,7 +19,7 @@ export class BarChartComponent {
     scales: { xAxes: [{}], yAxes: [{}] },
     plugins: {
       datalabels: {
-        anchor: 'end',
+        anchor: 'start',
         align: 'end',
       }
     }

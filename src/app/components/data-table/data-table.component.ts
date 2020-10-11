@@ -9,6 +9,7 @@ import { StatService } from '../../services/stat.service';
   styles: []
 })
 export class DataTableComponent implements OnInit {
+
   public tableData: UserData[];
   public cols: string[];
 

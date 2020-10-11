@@ -19,9 +19,10 @@ const addDataToAccumulator = (
 };
 
 export class ChartModel {
+
   private readonly data: UserData[];
-  private categoriesData: GroupingOption[];
-  private valuesData: GroupingOption[];
+  readonly categoriesData: GroupingOption[];
+  readonly valuesData: GroupingOption[];
 
   constructor(usersData: object, categories: GroupingOption[], values: GroupingOption[]) {
     this.data = usersData as UserData[];
