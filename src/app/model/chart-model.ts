@@ -1,4 +1,4 @@
-import {GroupingOption, StatData, UserData} from '../interfaces';
+import { GroupingOption, StatData, UserData } from '../interfaces';
 
 const addDataToAccumulator = (
   { labels, barChartData }: StatData,
@@ -20,13 +20,13 @@ const addDataToAccumulator = (
 
 export class ChartModel {
   private readonly data: UserData[];
-  public categories: GroupingOption[];
-  public values: GroupingOption[];
+  private categoriesData: GroupingOption[];
+  private valuesData: GroupingOption[];
 
   constructor(usersData: object, categories: GroupingOption[], values: GroupingOption[]) {
     this.data = usersData as UserData[];
-    this.categories = categories;
-    this.values = values;
+    this.categoriesData = categories;
+    this.valuesData = values;
   }
 
   getChartData(category: GroupingOption, value: GroupingOption): StatData {
@@ -43,4 +43,13 @@ export class ChartModel {
   getTableData(): UserData[] {
     return this.data;
   }
+
+  get categories(): GroupingOption[] {
+    return this.categoriesData;
+  }
+
+  get values(): GroupingOption[] {
+    return this.valuesData;
+  }
+
 }

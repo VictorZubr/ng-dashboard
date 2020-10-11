@@ -5,7 +5,6 @@ import { ChartDataSets } from 'chart.js';
 
 import { GroupingOption } from '../../interfaces';
 import { StatService } from '../../services/stat.service';
-import { ChartModel } from '../../model/chart-model';
 
 @Component({
   selector: 'app-dashboard',
@@ -21,43 +20,39 @@ export class DashboardComponent implements OnInit {
   public currentCategory;
   public currentValue;
 
-  private chartModel: ChartModel;
-
   constructor(private stat: StatService) { }
 
   ngOnInit(): void {
-    if (this.stat.isReady()) {
-      this.initComponent(this.stat.chartModel);
-      return;
+    if (this.stat.isReady) {
+      return this.initComponent();
     }
 
-    this.stat.getUsersData().subscribe(chartModel => {
-      this.initComponent(chartModel);
+    this.stat.getUsersData().subscribe(() => {
+      this.initComponent();
     });
   }
 
-  private initComponent(chartModel: ChartModel) {
-    this.chartModel = chartModel;
-    this.categories = chartModel.categories;
-    this.values = chartModel.values;
+  private initComponent(): void {
+    this.categories = this.stat.categories;
+    this.values = this.stat.values;
     this.currentCategory = this.categories[0];
     this.currentValue = this.values[0];
 
     this.renderChart();
   }
 
-  onCategorySelect($event: any) {
+  onCategorySelect($event: any): void {
     this.currentCategory = this.categories.find(option => option.id === $event);
     this.renderChart();
   }
 
-  onValueSelect($event: any) {
+  onValueSelect($event: any): void {
     this.currentValue = this.values.find(option => option.id === $event);
     this.renderChart();
   }
 
-  renderChart() {
-    const { labels, barChartData } = this.chartModel.getChartData(this.currentCategory, this.currentValue);
+  renderChart(): void {
+    const { labels, barChartData } = this.stat.getChartData(this.currentCategory, this.currentValue);
     this.barChartLabels = labels;
     this.barChartData = barChartData;
   }
