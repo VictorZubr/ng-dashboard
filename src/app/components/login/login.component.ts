@@ -13,7 +13,11 @@ import { AuthenticationService } from '../../services/authentication.service';
 export class LoginComponent implements OnInit, AfterViewInit {
   @ViewChild('email') emailElement: ElementRef;
 
-  public form: FormGroup;
+  public form: FormGroup = new FormGroup({
+    email: new FormControl(null, [Validators.required, Validators.email]),
+    password: new FormControl(null, [Validators.required, Validators.minLength(6)])
+  });
+
   public submitted = false;
 
   constructor(
@@ -23,11 +27,6 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.auth.logout();
-
-    this.form = new FormGroup({
-      email: new FormControl(null, [Validators.required, Validators.email]),
-      password: new FormControl(null, [Validators.required, Validators.minLength(6)])
-    });
   }
 
   ngAfterViewInit(): void {

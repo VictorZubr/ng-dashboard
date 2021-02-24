@@ -13,7 +13,7 @@ export class SelectComponent {
 
   constructor() { }
 
-  CheckValue($event: number) {
+  checkValue($event: number) {
     this.selectCheck.emit($event);
   }
 

@@ -1,6 +1,6 @@
 <div class="select-wrapper">
   <label>{{label}}</label>
-  <select [ngModel]="selectedOption?.id" (ngModelChange)="CheckValue($event)">
+  <select [ngModel]="selectedOption?.id" (ngModelChange)="checkValue($event)">
     <option *ngFor="let option of options" [ngValue]="option.id">{{option.name}}</option>
   </select>
 </div>
